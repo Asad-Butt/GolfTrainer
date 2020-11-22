@@ -10,7 +10,8 @@ import UIKit
 
 struct Item {
   var imageName: String
-    var clubName: String
+    var clubName: String,
+    isSelected: Bool = false
 }
 
 class ClubsViewController: UIViewController {
@@ -57,44 +58,33 @@ class ClubsViewController: UIViewController {
                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ClubsCVC", for: indexPath) as! ClubsCVC
                    
                    cell.clubsImage.image = UIImage(named: items[indexPath.item].imageName)
-                   
+            cell.clubName.text = items[indexPath.item].clubName
+            cell.checkImage.isHidden = true
                    return cell
             }
             
-//            let keyboardCollectionViewWidthPerCentageOfMainView = 67.00
-        
-//        func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-//                cell.layer.cornerRadius = 30.0
-//                cell.layer.masksToBounds = true
-//                }
-        //    private func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        //        // handle tap events
-        //        print("You selected cell #\(indexPath.item)!")
-        //    }
+
         func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+            let index = indexPath.row
+            let item = collectionView.cellForItem(at: indexPath) as! ClubsCVC
+            items[index].isSelected = !items[index].isSelected
+            item.checkImage.isHidden = !items[index].isSelected
          print("nbsdfnbuiw")
         
     }
 }
 
-    extension ViewController : UICollectionViewDelegateFlowLayout {
+    extension ClubsViewController : UICollectionViewDelegateFlowLayout {
         func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-                return   CGSize(width: 100, height: 75)
+            return   CGSize(width: UIScreen.main.bounds.width/9, height: UIScreen.main.bounds.height/6)
         }
         func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-//                let minimumInteritemSpacingForSectionAt : CGFloat =  4.83
-//                return self.view.frame.width/100 * minimumInteritemSpacingForSectionAt//40
-//                return 20
-                //                    let minimumInteritemSpacingForSectionAt : CGFloat = 9.66
-                let minimumInteritemSpacingForSectionAt : CGFloat = 5.66//4.79499
-                return self.view.frame.width/100 * minimumInteritemSpacingForSectionAt//40
+            return 5
             }
             
         
         func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-            
-                let minimumLineSpacingForSectionAt : CGFloat = 9.66
-                return self.view.frame.height/100 * minimumLineSpacingForSectionAt//40
+          return 8
                 
             }
     }

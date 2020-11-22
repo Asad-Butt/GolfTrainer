@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ufr-uM-nus">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tLL-Ao-gp9">
     <device id="retina6_1" orientation="landscape" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -124,47 +124,44 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="6VZ-h2-W5y" userLabel="Clubs Collection View">
                                 <rect key="frame" x="64" y="55.5" width="768" height="260.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="NCG-gb-kzg">
-                                    <size key="itemSize" width="128" height="128"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="NCG-gb-kzg">
+                                    <size key="itemSize" width="100" height="100"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ClubsCVC" id="bvU-B0-1CR" userLabel="ClubsCVC" customClass="ClubsCVC" customModule="GolfTrainer" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="80" height="124"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="EuG-Ow-w2c">
-                                            <rect key="frame" x="0.0" y="0.0" width="80" height="124"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1" translatesAutoresizingMaskIntoConstraints="NO" id="fJC-0b-dBz">
-                                                    <rect key="frame" x="0.0" y="0.0" width="80" height="89.5"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="80" id="c3L-vC-gsq"/>
-                                                    </constraints>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1" translatesAutoresizingMaskIntoConstraints="NO" id="fJC-0b-dBz">
+                                                    <rect key="frame" x="0.0" y="0.0" width="100" height="55"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </imageView>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="check" translatesAutoresizingMaskIntoConstraints="NO" id="mbB-2i-zKO">
-                                                    <rect key="frame" x="30" y="104" width="20" height="20"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="20" id="Gfa-WN-IaM"/>
-                                                        <constraint firstAttribute="width" constant="20" id="vFq-Bp-sxi"/>
-                                                    </constraints>
+                                                    <rect key="frame" x="38" y="76" width="24" height="24"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NXD-JZ-xuH">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NXD-JZ-xuH">
                                                     <rect key="frame" x="18" y="68" width="44" height="10"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstItem="NXD-JZ-xuH" firstAttribute="centerX" secondItem="EuG-Ow-w2c" secondAttribute="centerX" id="6ON-EQ-IQz"/>
                                                 <constraint firstItem="fJC-0b-dBz" firstAttribute="leading" secondItem="EuG-Ow-w2c" secondAttribute="leading" id="6jY-Xo-WAJ"/>
-                                                <constraint firstItem="mbB-2i-zKO" firstAttribute="top" secondItem="NXD-JZ-xuH" secondAttribute="bottom" id="KZk-dA-pfW"/>
+                                                <constraint firstItem="mbB-2i-zKO" firstAttribute="width" secondItem="EuG-Ow-w2c" secondAttribute="width" multiplier="0.24" id="DjT-Pc-EXB"/>
+                                                <constraint firstItem="mbB-2i-zKO" firstAttribute="top" secondItem="NXD-JZ-xuH" secondAttribute="bottom" constant="1" id="KZk-dA-pfW"/>
                                                 <constraint firstItem="NXD-JZ-xuH" firstAttribute="top" secondItem="fJC-0b-dBz" secondAttribute="bottom" id="SWl-Wa-UUT"/>
-                                                <constraint firstItem="fJC-0b-dBz" firstAttribute="height" secondItem="EuG-Ow-w2c" secondAttribute="height" multiplier="0.721538" id="akf-my-CU2"/>
+                                                <constraint firstItem="fJC-0b-dBz" firstAttribute="height" secondItem="EuG-Ow-w2c" secondAttribute="height" multiplier="0.551538" id="akf-my-CU2"/>
                                                 <constraint firstItem="fJC-0b-dBz" firstAttribute="top" secondItem="EuG-Ow-w2c" secondAttribute="top" id="bfA-co-Jda"/>
+                                                <constraint firstItem="mbB-2i-zKO" firstAttribute="height" secondItem="EuG-Ow-w2c" secondAttribute="height" multiplier="0.24" id="e9r-Vn-C8V"/>
                                                 <constraint firstAttribute="bottom" secondItem="mbB-2i-zKO" secondAttribute="bottom" id="h3V-SC-YRm"/>
                                                 <constraint firstAttribute="trailing" secondItem="fJC-0b-dBz" secondAttribute="trailing" id="uSx-Um-VZh"/>
                                                 <constraint firstItem="mbB-2i-zKO" firstAttribute="centerX" secondItem="fJC-0b-dBz" secondAttribute="centerX" id="vOb-Vm-snQ"/>
@@ -172,6 +169,7 @@
                                         </collectionViewCellContentView>
                                         <connections>
                                             <outlet property="checkImage" destination="mbB-2i-zKO" id="9Jy-Hn-Aia"/>
+                                            <outlet property="clubName" destination="NXD-JZ-xuH" id="G2X-U5-1A9"/>
                                             <outlet property="clubsImage" destination="fJC-0b-dBz" id="nvA-z9-MRC"/>
                                         </connections>
                                     </collectionViewCell>
@@ -537,13 +535,6 @@
                                 <color key="textColor" red="0.0" green="0.26652277730000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleAspectFit" misplaced="YES" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S0P-gO-Z8d">
-                                <rect key="frame" x="479" y="56" width="282" height="78"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
-                                <state key="normal" title="Select the clubs you use" image="ball">
-                                    <color key="titleColor" red="0.0" green="0.26652277730000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="12Y-iv-s9O">
                                 <rect key="frame" x="524.5" y="151.5" width="242.5" height="74"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
@@ -570,13 +561,17 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="good logo" translatesAutoresizingMaskIntoConstraints="NO" id="WYr-gP-ToJ">
                                 <rect key="frame" x="44" y="3" width="500.5" height="387"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Select the clubs you use" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aEy-ws-gcl">
+                                <rect key="frame" x="622" y="99" width="188" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                <color key="textColor" red="0.069233529269999997" green="0.3302205205" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="I6c-G9-eOH" firstAttribute="trailing" secondItem="12Y-iv-s9O" secondAttribute="trailing" constant="85" id="27P-2Z-TfO"/>
-                            <constraint firstItem="I6c-G9-eOH" firstAttribute="trailing" secondItem="S0P-gO-Z8d" secondAttribute="trailing" constant="115" id="3ab-Dq-pG4"/>
-                            <constraint firstItem="12Y-iv-s9O" firstAttribute="top" secondItem="S0P-gO-Z8d" secondAttribute="bottom" constant="5" id="6OA-lD-4hO"/>
-                            <constraint firstItem="S0P-gO-Z8d" firstAttribute="height" secondItem="njQ-rP-VTF" secondAttribute="height" multiplier="0.178406" id="7IR-nK-LVF"/>
                             <constraint firstItem="8dw-A1-ba7" firstAttribute="height" secondItem="njQ-rP-VTF" secondAttribute="height" multiplier="0.178406" id="9LF-2n-Au1"/>
                             <constraint firstItem="WYr-gP-ToJ" firstAttribute="height" secondItem="njQ-rP-VTF" secondAttribute="height" multiplier="0.934783" id="9Wq-SB-qgV"/>
                             <constraint firstItem="WYr-gP-ToJ" firstAttribute="centerY" secondItem="I6c-G9-eOH" secondAttribute="centerY" id="HKf-Wp-mVM"/>
@@ -586,7 +581,6 @@
                             <constraint firstItem="ggA-6p-n4X" firstAttribute="top" secondItem="12Y-iv-s9O" secondAttribute="bottom" constant="5" id="X7h-Xt-Wq4"/>
                             <constraint firstItem="I6c-G9-eOH" firstAttribute="trailing" secondItem="8dw-A1-ba7" secondAttribute="trailing" constant="25" id="aff-Vl-hyZ"/>
                             <constraint firstItem="I6c-G9-eOH" firstAttribute="bottom" secondItem="8dw-A1-ba7" secondAttribute="bottom" constant="10" id="d51-oP-q6k"/>
-                            <constraint firstItem="S0P-gO-Z8d" firstAttribute="top" secondItem="E6t-Rh-Ksv" secondAttribute="bottom" constant="5" id="d7E-cK-bp5"/>
                             <constraint firstItem="WYr-gP-ToJ" firstAttribute="width" secondItem="njQ-rP-VTF" secondAttribute="width" multiplier="0.558424" id="eAv-np-xls"/>
                             <constraint firstItem="E6t-Rh-Ksv" firstAttribute="top" secondItem="I6c-G9-eOH" secondAttribute="top" constant="20" id="fzd-3S-9VO"/>
                             <constraint firstItem="8dw-A1-ba7" firstAttribute="top" secondItem="ggA-6p-n4X" secondAttribute="bottom" constant="5" id="otH-aL-4ow"/>

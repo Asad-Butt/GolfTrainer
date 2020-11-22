@@ -14,12 +14,20 @@ class AccuracyViewController: UIViewController,UITextFieldDelegate,UIPickerViewD
     var pickerView = UIPickerView()
     @IBOutlet weak var clubsTextField: UITextField!
     var clubsData:[String] = [String]()
+    @IBOutlet var buttons: [UIButton]!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         clubsData = ["5 iron", "6 iron", "7 iron", "8 iron"]
 
         // Do any additional setup after loading the view.
+    }
+    @IBAction func buttonPressed(_ sender: UIButton) {
+        buttons.forEach { (button) in
+            button.layer.borderWidth = 0
+        }
+        buttons[sender.tag].layer.borderWidth = 3
+        buttons[sender.tag].layer.borderColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {

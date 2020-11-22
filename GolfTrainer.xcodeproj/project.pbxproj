@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7A7411CD231879C304703C8C /* Pods_GolfTrainer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E0D72189DD7CD6057FF964A /* Pods_GolfTrainer.framework */; };
 		C37059702565A35C00547D74 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C370596F2565A35C00547D74 /* AppDelegate.swift */; };
 		C37059722565A35C00547D74 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37059712565A35C00547D74 /* SceneDelegate.swift */; };
 		C37059742565A35C00547D74 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37059732565A35C00547D74 /* ViewController.swift */; };
@@ -23,6 +24,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		24A88A634E44855602C9A659 /* Pods-GolfTrainer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GolfTrainer.debug.xcconfig"; path = "Target Support Files/Pods-GolfTrainer/Pods-GolfTrainer.debug.xcconfig"; sourceTree = "<group>"; };
+		51EF1C894216DB1624BE66B3 /* Pods-GolfTrainer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GolfTrainer.release.xcconfig"; path = "Target Support Files/Pods-GolfTrainer/Pods-GolfTrainer.release.xcconfig"; sourceTree = "<group>"; };
+		7E0D72189DD7CD6057FF964A /* Pods_GolfTrainer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GolfTrainer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C370596C2565A35C00547D74 /* GolfTrainer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GolfTrainer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C370596F2565A35C00547D74 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C37059712565A35C00547D74 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -45,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A7411CD231879C304703C8C /* Pods_GolfTrainer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,6 +61,8 @@
 			children = (
 				C370596E2565A35C00547D74 /* GolfTrainer */,
 				C370596D2565A35C00547D74 /* Products */,
+				F0FAD51DE25B38627A8F9E79 /* Pods */,
+				EAD0CD5B002189BED9A24932 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -96,6 +103,24 @@
 			path = ViewControllers;
 			sourceTree = "<group>";
 		};
+		EAD0CD5B002189BED9A24932 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7E0D72189DD7CD6057FF964A /* Pods_GolfTrainer.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F0FAD51DE25B38627A8F9E79 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				24A88A634E44855602C9A659 /* Pods-GolfTrainer.debug.xcconfig */,
+				51EF1C894216DB1624BE66B3 /* Pods-GolfTrainer.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -103,9 +128,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C37059802565A36400547D74 /* Build configuration list for PBXNativeTarget "GolfTrainer" */;
 			buildPhases = (
+				C4804B99BC91DCE4FCEC1537 /* [CP] Check Pods Manifest.lock */,
 				C37059682565A35C00547D74 /* Sources */,
 				C37059692565A35C00547D74 /* Frameworks */,
 				C370596A2565A35C00547D74 /* Resources */,
+				DEE906D028FE8305280EC976 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -162,6 +189,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		C4804B99BC91DCE4FCEC1537 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GolfTrainer-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DEE906D028FE8305280EC976 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GolfTrainer/Pods-GolfTrainer-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GolfTrainer/Pods-GolfTrainer-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GolfTrainer/Pods-GolfTrainer-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C37059682565A35C00547D74 /* Sources */ = {
@@ -310,6 +379,7 @@
 		};
 		C37059812565A36400547D74 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 24A88A634E44855602C9A659 /* Pods-GolfTrainer.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -328,6 +398,7 @@
 		};
 		C37059822565A36400547D74 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 51EF1C894216DB1624BE66B3 /* Pods-GolfTrainer.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

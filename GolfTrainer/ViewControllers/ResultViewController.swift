@@ -29,10 +29,7 @@ class ResultViewController: UIViewController, UITableViewDelegate, UITableViewDa
     @IBOutlet weak var tableView: UITableView!
     var empty:Int?
     @IBAction func backButtonTapped(_ sender: UIButton) {
-       
-                     let vc = self.storyboard?.instantiateViewController(withIdentifier: "MenuViewController") as! MenuViewController
-                     self.present(vc,animated: true)
-                 
+        self.dismiss(animated: true, completion: nil)
     }
     
     override func viewDidLoad() {

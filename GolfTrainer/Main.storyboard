@@ -191,11 +191,11 @@
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m1G-Lz-z8F">
                                 <rect key="frame" x="70" y="309" width="97" height="74"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Edit" backgroundImage="ball">
+                                <state key="normal" title="Back" backgroundImage="ball">
                                     <color key="titleColor" red="0.0" green="0.26652277730000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="editButtonTapped:" destination="Ufr-uM-nus" eventType="touchUpInside" id="Mel-iX-5b9"/>
+                                    <action selector="backButtonTapped:" destination="Ufr-uM-nus" eventType="touchUpInside" id="Mel-iX-5b9"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -439,7 +439,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="ScE-mc-sWR">
                                 <rect key="frame" x="659.5" y="316" width="182.5" height="72"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bxw-m7-LYj">
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bxw-m7-LYj">
                                         <rect key="frame" x="0.0" y="0.0" width="78.5" height="72"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" title="Save" backgroundImage="ball">
@@ -449,7 +449,7 @@
                                             <action selector="saveButtonTapped:" destination="8tB-00-ENE" eventType="touchUpInside" id="yPe-8T-fgH"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sKo-4e-q2q">
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sKo-4e-q2q">
                                         <rect key="frame" x="103.5" y="0.0" width="79" height="72"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" title="Next" backgroundImage="ball">

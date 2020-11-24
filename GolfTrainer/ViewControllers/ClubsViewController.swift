@@ -40,11 +40,8 @@ class ClubsViewController: UIViewController {
     Item(imageName: "16",clubName:"Driver"),
     Item(imageName: "17",clubName:"Putter")]
     
-    @IBAction func editButtonTapped(_ sender: UIButton) {
-        for index in 0..<items.count{
-            items[index].isSelected = false
-        }
-          self.collectionView.reloadData()
+    @IBAction func backButtonTapped(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
     }
     @IBAction func saveButtonTaped(_ sender: UIButton) {
         items.map { (item) in
@@ -61,10 +58,7 @@ class ClubsViewController: UIViewController {
                     "club":item.clubName] as [String : Any]
                 childRef.child(item.clubName).setValue(itemData)
                 let alert = UIAlertController(title: "Clubs", message: "\(item.clubName) has been selected.", preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "ok", style: .default, handler: { action in
-                let vc = self.storyboard?.instantiateViewController(withIdentifier: "MenuViewController") as! MenuViewController
-                    self.present(vc,animated: true)
-                }))
+                alert.addAction(UIAlertAction(title: "ok", style: .default, handler: nil))
                 self.present(alert,animated:true)
             }
         }

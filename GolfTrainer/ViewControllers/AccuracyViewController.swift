@@ -18,19 +18,6 @@ class AccuracyViewController: UIViewController,UITextFieldDelegate,UIPickerViewD
     @IBOutlet weak var clubsTextField: UITextField!
     var clubsData:[String] = [String]()
     var selectedClub: String = ""
-    var accurateShots: Int = 0
-    var leftShots: Int = 0
-    var shortAccurateShots: Int = 0
-    var shortLeftShots: Int = 0
-    var rightShots: Int = 0
-    var shortRightShots: Int = 0
-    var totalAccurateShots: Int = 0
-    var totalShortAccurateShots: Int = 0
-    var totalLeftShots: Int = 0
-    var totalShortLeftShots: Int = 0
-    var totalRightShots: Int = 0
-    var totalShortRightShots: Int = 0
-
 
     @IBOutlet var buttons: [UIButton]!
 
@@ -61,6 +48,11 @@ class AccuracyViewController: UIViewController,UITextFieldDelegate,UIPickerViewD
                     let clubData = String(club as! String)
                     self.clubsData.append(clubData)
                 }
+                if self.clubsData[0] != nil{
+                                  self.clubsTextField.text = self.clubsData[0]
+                              }else{
+                                  self.clubsTextField.text = ""
+                              }
                }
            })
        }
@@ -76,9 +68,9 @@ class AccuracyViewController: UIViewController,UITextFieldDelegate,UIPickerViewD
         shotPlace = shot
     }
     @IBAction func saveButtonTapped(_ sender: UIButton) {
-           saveDirection()
+           saveDirection(tag: sender.tag)
    }
-    func saveDirection() {
+    func saveDirection(tag: Int) {
     shotsData.map { (shots) in
            if shots.club == selectedClub{
                if shotPlace != nil{
@@ -94,7 +86,11 @@ class AccuracyViewController: UIViewController,UITextFieldDelegate,UIPickerViewD
                    "Shots":shots.Shots+1,
                    "club":shots.club] as [String : Any]
                childRef.child(shots.club).setValue(itemData)
+                        if tag == 2{
                IntroductionViewController.alert(message: "You have Saved Your Direction against Club",move: nil)
+                        }else{
+                            moveNext()
+                        }
            }else{
                IntroductionViewController.alert(message: "You have Already Played your 10 shots against this club",move: nil)
            }
@@ -111,7 +107,11 @@ class AccuracyViewController: UIViewController,UITextFieldDelegate,UIPickerViewD
                    "Shots":shots.Shots+1,
                    "club":shots.club] as [String : Any]
                childRef.child(shots.club).setValue(itemData)
-           IntroductionViewController.alert(message: "You have Saved Your Direction against Club",move: nil)
+            if tag == 2{
+         IntroductionViewController.alert(message: "You have Saved Your Direction against Club",move: nil)
+                  }else{
+                      moveNext()
+                  }
            }else{
                IntroductionViewController.alert(message: "You have Already Played your 10 shots against this club",move: nil)
                        }
@@ -128,7 +128,11 @@ class AccuracyViewController: UIViewController,UITextFieldDelegate,UIPickerViewD
                    "Shots":shots.Shots+1,
                    "club":shots.club] as [String : Any]
                childRef.child(shots.club).setValue(itemData)
-               IntroductionViewController.alert(message: "You have Saved Your Direction against Club",move: nil)
+           if tag == 2{
+            IntroductionViewController.alert(message: "You have Saved Your Direction against Club",move: nil)
+                     }else{
+                         moveNext()
+                     }
            }else{
             IntroductionViewController.alert(message: "You have Already Played your 10 shots against this club",move: nil)
            }
@@ -145,7 +149,11 @@ class AccuracyViewController: UIViewController,UITextFieldDelegate,UIPickerViewD
                    "Shots":shots.Shots+1,
                    "club":shots.club] as [String : Any]
                childRef.child(shots.club).setValue(itemData)
-           IntroductionViewController.alert(message: "You have Saved Your Direction against Club",move: nil)
+                if tag == 2{
+                 IntroductionViewController.alert(message: "You have Saved Your Direction against Club",move: nil)
+                          }else{
+                              moveNext()
+                          }
            }else{
                 IntroductionViewController.alert(message: "You have Already Played your 10 shots against this club",move: nil)
            }
@@ -162,7 +170,11 @@ class AccuracyViewController: UIViewController,UITextFieldDelegate,UIPickerViewD
                    "Shots":shots.Shots+1,
                    "club":shots.club] as [String : Any]
                childRef.child(shots.club).setValue(itemData)
-                   IntroductionViewController.alert(message: "You have Saved Your Direction against Club",move: nil)
+         if tag == 2{
+        IntroductionViewController.alert(message: "You have Saved Your Direction against Club",move: nil)
+                 }else{
+                     moveNext()
+                 }
        }else{
             IntroductionViewController.alert(message: "You have Already Played your 10 shots against this club",move: nil)
        }
@@ -179,7 +191,11 @@ class AccuracyViewController: UIViewController,UITextFieldDelegate,UIPickerViewD
                    "Shots":shots.Shots+1,
                    "club":shots.club] as [String : Any]
                childRef.child(shots.club).setValue(itemData)
-                   IntroductionViewController.alert(message: "You have Saved Your Direction against Club",move: nil)
+                if tag == 2{
+             IntroductionViewController.alert(message: "You have Saved Your Direction against Club",move: nil)
+                      }else{
+                          moveNext()
+                      }
            }
        else{
             IntroductionViewController.alert(message: "You have Already Played your 10 shots against this club",move: nil)
@@ -192,13 +208,17 @@ class AccuracyViewController: UIViewController,UITextFieldDelegate,UIPickerViewD
    }
 }
     }
+    
+    func moveNext () {
+        let alert = UIAlertController(title: "Note", message: "You have Saved Your Direction against Club", preferredStyle: .alert)
+                         alert.addAction(UIAlertAction(title: "ok", style: .default, handler: { action in
+                           let vc = self.storyboard?.instantiateViewController(withIdentifier: "ResultViewController") as! ResultViewController
+                           self.present(vc,animated: true)
+                         }))
+                    self.present(alert,animated: true)
+    }
     @IBAction func nextButtonTapped(_ sender: UIButton) {
-        let alert = UIAlertController(title: "Record", message: "You have saved the direction!", preferredStyle: .alert)
-             alert.addAction(UIAlertAction(title: "ok", style: .default, handler: { action in
-               let vc = self.storyboard?.instantiateViewController(withIdentifier: "ResultViewController") as! ResultViewController
-               self.present(vc,animated: true)
-             }))
-        self.present(alert,animated: true)
+        saveDirection(tag: sender.tag)
     }
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
          return 1

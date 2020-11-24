@@ -12,9 +12,15 @@ class ClubsCVC: UICollectionViewCell {
      @IBOutlet weak var clubsImage: UIImageView!
     @IBOutlet weak var checkImage: UIImageView!
     @IBOutlet weak var clubName: UILabel!
-//    override var isChecked: Bool {
+//
+//    override var isHighlighted: Bool{
+//      didSet {
+//             checkImage.isHidden = !isHighlighted
+//           }
+//        }
+//    override var isSelected: Bool {
 //       didSet {
-//         checkImage.isHidden = !isChecked
+//         checkImage.isHidden = !isSelected
 //       }
-//     }
-}
+     }
+//}

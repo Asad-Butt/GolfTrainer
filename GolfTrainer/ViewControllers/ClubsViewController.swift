@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import FirebaseDatabase
 struct Item {
   var imageName: String
     var clubName: String,
@@ -15,8 +15,11 @@ struct Item {
 }
 
 class ClubsViewController: UIViewController {
+    
+    let childRef = Database.database().reference(withPath: "App/Category/")
 
-   
+    var dictionarySelectedIndexPath: [IndexPath: Bool] = [:]
+    var selectedClubs: [String] = ["","","","","","","","","","","","","","","","",""]
     @IBOutlet weak var collectionView: UICollectionView!
     
     var items: [Item] = [Item(imageName: "1",clubName:"Wedge"),
@@ -37,6 +40,58 @@ class ClubsViewController: UIViewController {
     Item(imageName: "16",clubName:"Driver"),
     Item(imageName: "17",clubName:"Putter")]
     
+    @IBAction func editButtonTapped(_ sender: UIButton) {
+        for index in 0..<items.count{
+            items[index].isSelected = false
+        }
+          self.collectionView.reloadData()
+    }
+    @IBAction func saveButtonTaped(_ sender: UIButton) {
+        items.map { (item) in
+            if item.isSelected == true{
+                print("items\(item.clubName)")
+                let itemData = [
+                    "Accurate":0,
+                    "Left":0,
+                    "ShortLeft":0,
+                    "ShortAccurate":0,
+                    "Right":0,
+                    "ShortRight":0,
+                    "Shots":0,
+                    "club":item.clubName] as [String : Any]
+                childRef.child(item.clubName).setValue(itemData)
+                let alert = UIAlertController(title: "Clubs", message: "\(item.clubName) has been selected.", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "ok", style: .default, handler: { action in
+                let vc = self.storyboard?.instantiateViewController(withIdentifier: "MenuViewController") as! MenuViewController
+                    self.present(vc,animated: true)
+                }))
+                self.present(alert,animated:true)
+            }
+        }
+    }
+    @IBAction func nextButtonTapped(_ sender: UIButton) {
+       items.map { (item) in
+            if item.isSelected == true{
+                print("items\(item.clubName)")
+                let itemData = [
+                    "Accurate":0,
+                    "Left":0,
+                    "ShortLeft":0,
+                    "ShortAccurate":0,
+                    "Right":0,
+                    "ShortRight":0,
+                    "Shots":0,
+                    "club":item.clubName] as [String : Any]
+                childRef.child(item.clubName).setValue(itemData)
+                let alert = UIAlertController(title: "Clubs", message: "\(item.clubName) has been selected.", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "ok", style: .default, handler: { action in
+                let vc = self.storyboard?.instantiateViewController(withIdentifier: "GapTestViewController") as! GapTestViewController
+                    self.present(vc,animated: true)
+                }))
+                self.present(alert,animated:true)
+            }
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.delegate = self
@@ -56,10 +111,8 @@ class ClubsViewController: UIViewController {
         
         func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ClubsCVC", for: indexPath) as! ClubsCVC
-                   
                    cell.clubsImage.image = UIImage(named: items[indexPath.item].imageName)
             cell.clubName.text = items[indexPath.item].clubName
-            cell.checkImage.isHidden = true
                    return cell
             }
             
@@ -68,9 +121,7 @@ class ClubsViewController: UIViewController {
             let index = indexPath.row
             let item = collectionView.cellForItem(at: indexPath) as! ClubsCVC
             items[index].isSelected = !items[index].isSelected
-            item.checkImage.isHidden = !items[index].isSelected
-         print("nbsdfnbuiw")
-        
+            item.checkImage.isHidden =  !items[index].isSelected
     }
 }
 

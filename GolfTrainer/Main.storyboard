@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8tB-00-ENE">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gCt-r4-oV1">
     <device id="retina6_1" orientation="landscape" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -8,31 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
-            <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="GolfTrainer" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="good logo" translatesAutoresizingMaskIntoConstraints="NO" id="WDk-vj-ejI">
-                                <rect key="frame" x="164" y="9" width="565" height="385"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                        </subviews>
-                        <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="19" y="-250"/>
-        </scene>
-        <!--View Controller-->
+        <!--Introduction View Controller-->
         <scene sceneID="lYH-KW-3pR">
             <objects>
-                <viewController id="gCt-r4-oV1" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="IntroductionViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="gCt-r4-oV1" customClass="IntroductionViewController" customModule="GolfTrainer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cx7-3C-J4c">
                         <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -73,6 +52,9 @@
                                 <state key="normal" title="Next" backgroundImage="ball">
                                     <color key="titleColor" red="0.0" green="0.26652277732382013" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="nextButtonTapped:" destination="gCt-r4-oV1" eventType="touchUpInside" id="dDY-XA-M5V"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -110,7 +92,7 @@
         <!--Clubs View Controller-->
         <scene sceneID="LhQ-8k-Ace">
             <objects>
-                <viewController id="Ufr-uM-nus" customClass="ClubsViewController" customModule="GolfTrainer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ClubsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Ufr-uM-nus" customClass="ClubsViewController" customModule="GolfTrainer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pOe-GB-98B">
                         <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -142,7 +124,7 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="100" height="55"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </imageView>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="check" translatesAutoresizingMaskIntoConstraints="NO" id="mbB-2i-zKO">
+                                                <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="check" translatesAutoresizingMaskIntoConstraints="NO" id="mbB-2i-zKO">
                                                     <rect key="frame" x="38" y="76" width="24" height="24"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NXD-JZ-xuH">
@@ -184,6 +166,9 @@
                                         <state key="normal" title="Save" backgroundImage="ball">
                                             <color key="titleColor" red="0.0" green="0.26652277730000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="saveButtonTaped:" destination="Ufr-uM-nus" eventType="touchUpInside" id="ku1-Ow-MbE"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ngi-hX-kTh">
                                         <rect key="frame" x="103.5" y="0.0" width="79" height="72"/>
@@ -191,6 +176,9 @@
                                         <state key="normal" title="Next" backgroundImage="ball">
                                             <color key="titleColor" red="0.0" green="0.26652277730000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="nextButtonTapped:" destination="Ufr-uM-nus" eventType="touchUpInside" id="9YS-eR-raS"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -206,6 +194,9 @@
                                 <state key="normal" title="Edit" backgroundImage="ball">
                                     <color key="titleColor" red="0.0" green="0.26652277730000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="editButtonTapped:" destination="Ufr-uM-nus" eventType="touchUpInside" id="Mel-iX-5b9"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -236,7 +227,7 @@
         <!--GapTestViewController-->
         <scene sceneID="Ces-Ct-2Kv">
             <objects>
-                <viewController id="e7q-kE-R7J" userLabel="GapTestViewController" customClass="GapTestViewController" customModule="GolfTrainer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GapTestViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="e7q-kE-R7J" userLabel="GapTestViewController" customClass="GapTestViewController" customModule="GolfTrainer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vmC-5m-fnA">
                         <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -263,6 +254,9 @@
                                         <state key="normal" title="Save" backgroundImage="ball">
                                             <color key="titleColor" red="0.0" green="0.26652277730000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="saveButtonTapped:" destination="e7q-kE-R7J" eventType="touchUpInside" id="yqD-XZ-q2C"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jQ9-kc-L4K">
                                         <rect key="frame" x="103.5" y="0.0" width="79" height="72"/>
@@ -270,6 +264,9 @@
                                         <state key="normal" title="Next" backgroundImage="ball">
                                             <color key="titleColor" red="0.0" green="0.26652277730000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="nextButtonTapped:" destination="e7q-kE-R7J" eventType="touchUpInside" id="AgH-jw-LUu"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -282,9 +279,12 @@
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cxc-jG-CA1">
                                 <rect key="frame" x="59" y="309" width="97" height="74"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Edit" backgroundImage="ball">
+                                <state key="normal" title="Back" backgroundImage="ball">
                                     <color key="titleColor" red="0.0" green="0.26652277730000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="backButtonTapped:" destination="e7q-kE-R7J" eventType="touchUpInside" id="sIe-Xv-vPs"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="MzV-p5-Ngg">
                                 <rect key="frame" x="302" y="190" width="293" height="34"/>
@@ -340,7 +340,7 @@
         <!--AccuracyView Controller-->
         <scene sceneID="QQH-rg-I5t">
             <objects>
-                <viewController storyboardIdentifier="AccuracyViewController" id="8tB-00-ENE" userLabel="AccuracyView Controller" customClass="AccuracyViewController" customModule="GolfTrainer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AccuracyViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="8tB-00-ENE" userLabel="AccuracyView Controller" customClass="AccuracyViewController" customModule="GolfTrainer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7dL-3y-BXw">
                         <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -423,9 +423,12 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eIh-VV-T12">
                                 <rect key="frame" x="59" y="309" width="97" height="74"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Save" backgroundImage="ball">
+                                <state key="normal" title="Back" backgroundImage="ball">
                                     <color key="titleColor" red="0.0" green="0.26652277730000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="backButtonTapped:" destination="8tB-00-ENE" eventType="touchUpInside" id="ksw-j9-ref"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Direction Mat" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tsk-iZ-5tg">
                                 <rect key="frame" x="620.5" y="20" width="103" height="20.5"/>
@@ -442,6 +445,9 @@
                                         <state key="normal" title="Save" backgroundImage="ball">
                                             <color key="titleColor" red="0.0" green="0.26652277730000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="saveButtonTapped:" destination="8tB-00-ENE" eventType="touchUpInside" id="yPe-8T-fgH"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sKo-4e-q2q">
                                         <rect key="frame" x="103.5" y="0.0" width="79" height="72"/>
@@ -449,6 +455,9 @@
                                         <state key="normal" title="Next" backgroundImage="ball">
                                             <color key="titleColor" red="0.0" green="0.26652277730000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="nextButtonTapped:" destination="8tB-00-ENE" eventType="touchUpInside" id="Jrc-Fb-n62"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -555,7 +564,7 @@
         <!--Result View Controller-->
         <scene sceneID="vpB-n8-SO2">
             <objects>
-                <viewController id="Af0-d1-g1G" userLabel="Result View Controller" customClass="ResultViewController" customModule="GolfTrainer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ResultViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Af0-d1-g1G" userLabel="Result View Controller" customClass="ResultViewController" customModule="GolfTrainer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CZe-rE-YbU">
                         <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -569,6 +578,9 @@
                                         <state key="normal" title="Back" backgroundImage="ball">
                                             <color key="titleColor" red="0.0" green="0.26652277730000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="backButtonTapped:" destination="Af0-d1-g1G" eventType="touchUpInside" id="nf7-eG-8LQ"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Results" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fVO-xZ-OIb">
                                         <rect key="frame" x="376" y="20" width="145" height="21"/>
@@ -623,10 +635,10 @@
             </objects>
             <point key="canvasLocation" x="2.0089285714285712" y="4262.3188405797109"/>
         </scene>
-        <!--View Controller-->
+        <!--Menu View Controller-->
         <scene sceneID="Elb-GO-OjK">
             <objects>
-                <viewController id="tLL-Ao-gp9" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MenuViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="tLL-Ao-gp9" customClass="MenuViewController" customModule="GolfTrainer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="njQ-rP-VTF">
                         <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -649,6 +661,9 @@
                                         <state key="normal" backgroundImage="ball">
                                             <color key="titleColor" red="0.0" green="0.26652277730000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="selectClubsBotton:" destination="tLL-Ao-gp9" eventType="touchUpInside" id="aW2-qF-6Co"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select the clubs you use" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aEy-ws-gcl">
                                         <rect key="frame" x="100" y="30" width="178" height="18"/>
@@ -667,6 +682,10 @@
                                         <state key="normal" backgroundImage="ball">
                                             <color key="titleColor" red="0.0" green="0.26652277730000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="AccuracyDrillButton:" destination="tLL-Ao-gp9" eventType="touchUpInside" id="Vi9-qE-hWL"/>
+                                            <action selector="GapTestButton:" destination="tLL-Ao-gp9" eventType="touchUpInside" id="EkE-Ve-HYs"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Accuracy Drill" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oea-Ry-XFr">
                                         <rect key="frame" x="100" y="30" width="102.5" height="18"/>
@@ -685,6 +704,9 @@
                                         <state key="normal" backgroundImage="ball">
                                             <color key="titleColor" red="0.0" green="0.26652277730000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="GapTestButton:" destination="tLL-Ao-gp9" eventType="touchUpInside" id="Y5I-Ph-tKI"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gap test your club" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZB2-Zo-3mi">
                                         <rect key="frame" x="100" y="30" width="133.5" height="18"/>
@@ -703,6 +725,9 @@
                                         <state key="normal" backgroundImage="ball">
                                             <color key="titleColor" red="0.0" green="0.26652277730000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="ResultsButton:" destination="tLL-Ao-gp9" eventType="touchUpInside" id="qBf-qb-Qxf"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Results" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mvs-Ej-3lV">
                                         <rect key="frame" x="100" y="30" width="55" height="18"/>

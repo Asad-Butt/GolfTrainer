@@ -3,17 +3,19 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		7A7411CD231879C304703C8C /* Pods_GolfTrainer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E0D72189DD7CD6057FF964A /* Pods_GolfTrainer.framework */; };
+		C350BA34256C07C6002985E8 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C350BA33256C07C6002985E8 /* MenuViewController.swift */; };
+		C350BA36256C0831002985E8 /* IntroductionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C350BA35256C0831002985E8 /* IntroductionViewController.swift */; };
 		C37059702565A35C00547D74 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C370596F2565A35C00547D74 /* AppDelegate.swift */; };
 		C37059722565A35C00547D74 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37059712565A35C00547D74 /* SceneDelegate.swift */; };
-		C37059742565A35C00547D74 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37059732565A35C00547D74 /* ViewController.swift */; };
 		C37059792565A36400547D74 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C37059782565A36400547D74 /* Assets.xcassets */; };
 		C370597C2565A36400547D74 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C370597A2565A36400547D74 /* LaunchScreen.storyboard */; };
 		C37059842565ABCE00547D74 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C37059832565ABCE00547D74 /* Main.storyboard */; };
+		C376EDC2256AE74300ABD122 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C376EDC1256AE74200ABD122 /* GoogleService-Info.plist */; };
 		C3DAE28F2567021A00A6C924 /* GapTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DAE28E2567021A00A6C924 /* GapTestViewController.swift */; };
 		C3DAE2912567FF1700A6C924 /* AccuracyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DAE2902567FF1700A6C924 /* AccuracyViewController.swift */; };
 		C3DAE29725684DBC00A6C924 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DAE29625684DBC00A6C924 /* ResultViewController.swift */; };
@@ -27,14 +29,16 @@
 		24A88A634E44855602C9A659 /* Pods-GolfTrainer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GolfTrainer.debug.xcconfig"; path = "Target Support Files/Pods-GolfTrainer/Pods-GolfTrainer.debug.xcconfig"; sourceTree = "<group>"; };
 		51EF1C894216DB1624BE66B3 /* Pods-GolfTrainer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GolfTrainer.release.xcconfig"; path = "Target Support Files/Pods-GolfTrainer/Pods-GolfTrainer.release.xcconfig"; sourceTree = "<group>"; };
 		7E0D72189DD7CD6057FF964A /* Pods_GolfTrainer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GolfTrainer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C350BA33256C07C6002985E8 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		C350BA35256C0831002985E8 /* IntroductionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroductionViewController.swift; sourceTree = "<group>"; };
 		C370596C2565A35C00547D74 /* GolfTrainer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GolfTrainer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C370596F2565A35C00547D74 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C37059712565A35C00547D74 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		C37059732565A35C00547D74 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C37059782565A36400547D74 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C370597B2565A36400547D74 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C370597D2565A36400547D74 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C37059832565ABCE00547D74 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		C376EDC1256AE74200ABD122 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C3DAE28E2567021A00A6C924 /* GapTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GapTestViewController.swift; sourceTree = "<group>"; };
 		C3DAE2902567FF1700A6C924 /* AccuracyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccuracyViewController.swift; sourceTree = "<group>"; };
 		C3DAE29625684DBC00A6C924 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
@@ -83,6 +87,7 @@
 				C37059832565ABCE00547D74 /* Main.storyboard */,
 				C37059782565A36400547D74 /* Assets.xcassets */,
 				C370597A2565A36400547D74 /* LaunchScreen.storyboard */,
+				C376EDC1256AE74200ABD122 /* GoogleService-Info.plist */,
 				C370597D2565A36400547D74 /* Info.plist */,
 				C3DAE2A02569226F00A6C924 /* ResultTableViewCell.swift */,
 				C3DAE2A12569226F00A6C924 /* ResultTableViewCell.xib */,
@@ -94,11 +99,12 @@
 		C3DAE28B2567018100A6C924 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				C37059732565A35C00547D74 /* ViewController.swift */,
 				C3DAE28E2567021A00A6C924 /* GapTestViewController.swift */,
 				C3DAE2902567FF1700A6C924 /* AccuracyViewController.swift */,
 				C3DAE29625684DBC00A6C924 /* ResultViewController.swift */,
 				C3DAE2A62569587E00A6C924 /* ClubsViewController.swift */,
+				C350BA33256C07C6002985E8 /* MenuViewController.swift */,
+				C350BA35256C0831002985E8 /* IntroductionViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -117,7 +123,6 @@
 				24A88A634E44855602C9A659 /* Pods-GolfTrainer.debug.xcconfig */,
 				51EF1C894216DB1624BE66B3 /* Pods-GolfTrainer.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -183,6 +188,7 @@
 			files = (
 				C3DAE2A32569226F00A6C924 /* ResultTableViewCell.xib in Resources */,
 				C370597C2565A36400547D74 /* LaunchScreen.storyboard in Resources */,
+				C376EDC2256AE74300ABD122 /* GoogleService-Info.plist in Resources */,
 				C37059792565A36400547D74 /* Assets.xcassets in Resources */,
 				C37059842565ABCE00547D74 /* Main.storyboard in Resources */,
 			);
@@ -237,12 +243,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C37059742565A35C00547D74 /* ViewController.swift in Sources */,
+				C350BA34256C07C6002985E8 /* MenuViewController.swift in Sources */,
 				C3DAE29725684DBC00A6C924 /* ResultViewController.swift in Sources */,
 				C3DAE28F2567021A00A6C924 /* GapTestViewController.swift in Sources */,
 				C3DAE2912567FF1700A6C924 /* AccuracyViewController.swift in Sources */,
 				C37059702565A35C00547D74 /* AppDelegate.swift in Sources */,
 				C3DAE2A22569226F00A6C924 /* ResultTableViewCell.swift in Sources */,
+				C350BA36256C0831002985E8 /* IntroductionViewController.swift in Sources */,
 				C3DAE2A525694E7300A6C924 /* ClubsCVC.swift in Sources */,
 				C3DAE2A72569587E00A6C924 /* ClubsViewController.swift in Sources */,
 				C37059722565A35C00547D74 /* SceneDelegate.swift in Sources */,

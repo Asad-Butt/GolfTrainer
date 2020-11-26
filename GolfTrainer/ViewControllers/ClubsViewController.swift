@@ -17,9 +17,9 @@ struct Item {
 class ClubsViewController: UIViewController {
     
     let childRef = Database.database().reference(withPath: "App/Category/")
-
+    var isSave: Bool = false
     var dictionarySelectedIndexPath: [IndexPath: Bool] = [:]
-    var selectedClubs: [String] = ["","","","","","","","","","","","","","","","",""]
+    var selectedClubs: [String] = []
     @IBOutlet weak var collectionView: UICollectionView!
     
     var items: [Item] = [Item(imageName: "1",clubName:"Wedge"),
@@ -44,8 +44,15 @@ class ClubsViewController: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     @IBAction func saveButtonTaped(_ sender: UIButton) {
+        if isSave{
+            let alert = UIAlertController(title: "Clubs", message: "Already saved!.", preferredStyle: .alert)
+                           alert.addAction(UIAlertAction(title: "ok", style: .default, handler: nil))
+                           self.present(alert,animated:true)
+        }
+        var selected: [String] = []
         items.map { (item) in
             if item.isSelected == true{
+                selectedClubs.append(item.clubName)
                 print("items\(item.clubName)")
                 let itemData = [
                     "Accurate":0,
@@ -57,13 +64,19 @@ class ClubsViewController: UIViewController {
                     "Shots":0,
                     "club":item.clubName] as [String : Any]
                 childRef.child(item.clubName).setValue(itemData)
-                let alert = UIAlertController(title: "Clubs", message: "\(item.clubName) has been selected.", preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "ok", style: .default, handler: nil))
+                let alert = UIAlertController(title: "Clubs", message: "Clubs saved!.", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "ok", style: .default, handler: {  action in
+                    self.isSave = true
+                }))
                 self.present(alert,animated:true)
             }
         }
     }
     @IBAction func nextButtonTapped(_ sender: UIButton) {
+        if isSave{
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: "GapTestViewController") as! GapTestViewController
+            self.present(vc,animated: true)
+        }else{
        items.map { (item) in
             if item.isSelected == true{
                 print("items\(item.clubName)")
@@ -77,12 +90,13 @@ class ClubsViewController: UIViewController {
                     "Shots":0,
                     "club":item.clubName] as [String : Any]
                 childRef.child(item.clubName).setValue(itemData)
-                let alert = UIAlertController(title: "Clubs", message: "\(item.clubName) has been selected.", preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "ok", style: .default, handler: { action in
-                let vc = self.storyboard?.instantiateViewController(withIdentifier: "GapTestViewController") as! GapTestViewController
-                    self.present(vc,animated: true)
-                }))
-                self.present(alert,animated:true)
+                let alert = UIAlertController(title: "Note", message: "Club saved!", preferredStyle: .alert)
+                     alert.addAction(UIAlertAction(title: "ok", style: .default, handler: { action in
+                       let vc = self.storyboard?.instantiateViewController(withIdentifier: "GapTestViewController") as! GapTestViewController
+                       self.present(vc,animated: true)
+                     }))
+                self.present(alert,animated: true)
+            }
             }
         }
     }

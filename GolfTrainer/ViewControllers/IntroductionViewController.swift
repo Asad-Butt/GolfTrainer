@@ -7,15 +7,23 @@
 //
 
 import UIKit
+import FirebaseDatabase
 
 class IntroductionViewController: UIViewController {
+    let childRef = Database.database().reference()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+       checkData()
         // Do any additional setup after loading the view.
     }
-    
+    func checkData(){
+           childRef.observe(DataEventType.value, with: {(snapshot) in
+                         if snapshot.childrenCount > 0 {
+             NotificationCenter.default.post(Notification(name: NSNotification.Name(rawValue: "DataChecked")))
+               }
+           })
+       }
     @IBAction func nextButtonTapped(_ sender: UIButton) {
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "MenuViewController") as! MenuViewController
                       self.present(vc,animated: true)

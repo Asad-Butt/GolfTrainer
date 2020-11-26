@@ -14,8 +14,8 @@
             filePath = "GolfTrainer/ViewControllers/GapTestViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "45"
-            endingLineNumber = "45"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
             landmarkName = "FetchClubs()"
             landmarkType = "7">
             <Locations>
@@ -62,8 +62,8 @@
             filePath = "GolfTrainer/ViewControllers/GapTestViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "50"
-            endingLineNumber = "50"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
             landmarkName = "FetchClubs()"
             landmarkType = "7">
          </BreakpointContent>
@@ -78,8 +78,8 @@
             filePath = "GolfTrainer/ViewControllers/GapTestViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "53"
-            endingLineNumber = "53"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
             landmarkName = "FetchClubs()"
             landmarkType = "7">
          </BreakpointContent>
@@ -94,8 +94,8 @@
             filePath = "GolfTrainer/ViewControllers/ClubsViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "118"
-            endingLineNumber = "118"
+            startingLineNumber = "130"
+            endingLineNumber = "130"
             landmarkName = "collectionView(_:didSelectItemAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -126,8 +126,8 @@
             filePath = "GolfTrainer/ViewControllers/IntroductionViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "27"
-            endingLineNumber = "27"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
             landmarkName = "alert(message:move:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -142,8 +142,8 @@
             filePath = "GolfTrainer/ViewControllers/IntroductionViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "26"
-            endingLineNumber = "26"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
             landmarkName = "alert(message:move:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -158,8 +158,8 @@
             filePath = "GolfTrainer/ViewControllers/IntroductionViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "24"
-            endingLineNumber = "24"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
             landmarkName = "alert(message:move:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -174,8 +174,8 @@
             filePath = "GolfTrainer/ViewControllers/IntroductionViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "23"
-            endingLineNumber = "23"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
             landmarkName = "alert(message:move:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -190,9 +190,9 @@
             filePath = "GolfTrainer/ViewControllers/MenuViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "51"
-            endingLineNumber = "51"
-            landmarkName = "checkData()"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
+            landmarkName = "DataChecked()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -206,9 +206,9 @@
             filePath = "GolfTrainer/ViewControllers/MenuViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "53"
-            endingLineNumber = "53"
-            landmarkName = "checkData()"
+            startingLineNumber = "54"
+            endingLineNumber = "54"
+            landmarkName = "DataChecked()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -216,15 +216,15 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "DC1BF5C9-FD72-4346-9DD3-B441B77C3F50"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GolfTrainer/ViewControllers/MenuViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "54"
-            endingLineNumber = "54"
-            landmarkName = "checkData()"
+            startingLineNumber = "55"
+            endingLineNumber = "55"
+            landmarkName = "DataChecked()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -232,15 +232,15 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "7C24DAEA-4343-4B18-B859-2F242F8A71BD"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GolfTrainer/ViewControllers/MenuViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "52"
-            endingLineNumber = "52"
-            landmarkName = "checkData()"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
+            landmarkName = "DataChecked()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -286,8 +286,8 @@
                   urlString = "file:///Users/asad/Developer/GolfTrainer/GolfTrainer/ViewControllers/ResultViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "76"
-                  endingLineNumber = "76"
+                  startingLineNumber = "73"
+                  endingLineNumber = "73"
                   offsetFromSymbolStart = "85">
                </Location>
                <Location
@@ -301,8 +301,8 @@
                   urlString = "file:///Users/asad/Developer/GolfTrainer/GolfTrainer/ViewControllers/ResultViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "76"
-                  endingLineNumber = "76"
+                  startingLineNumber = "73"
+                  endingLineNumber = "73"
                   offsetFromSymbolStart = "171">
                </Location>
             </Locations>
@@ -344,14 +344,14 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "835B6886-4B1B-4672-9DEC-829B3426D5C7"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GolfTrainer/ViewControllers/MenuViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "41"
-            endingLineNumber = "41"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
             landmarkName = "AccuracyDrillButton(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -360,14 +360,14 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "BD59F178-1180-4547-9911-F5B73D1EE01E"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GolfTrainer/ViewControllers/MenuViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "32"
-            endingLineNumber = "32"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
             landmarkName = "GapTestButton(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -382,8 +382,8 @@
             filePath = "GolfTrainer/ViewControllers/ClubsViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "44"
-            endingLineNumber = "44"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
             landmarkName = "backButtonTapped(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -398,9 +398,57 @@
             filePath = "GolfTrainer/ViewControllers/ClubsViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "43"
-            endingLineNumber = "43"
-            landmarkName = "backButtonTapped(_:)"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
+            landmarkName = "ClubsViewController"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "FFAFC387-2CFA-4355-A9F1-7636086C402B"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GolfTrainer/ViewControllers/AccuracyViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "89"
+            endingLineNumber = "89"
+            landmarkName = "saveDirection(tag:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2025F37D-371F-4F3E-988A-5E4542B545F8"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GolfTrainer/ViewControllers/AccuracyViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "104"
+            endingLineNumber = "104"
+            landmarkName = "saveDirection(tag:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "604B7B8C-71B6-4AFA-9818-048A6F795FDA"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GolfTrainer/ViewControllers/AccuracyViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "93"
+            endingLineNumber = "93"
+            landmarkName = "saveDirection(tag:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

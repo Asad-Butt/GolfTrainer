@@ -13,8 +13,9 @@ class MenuViewController: UIViewController {
     var result : Bool?
     override func viewDidLoad() {
         super.viewDidLoad()
-        checkData()
-
+        DataChecked()
+          NotificationCenter.default.addObserver(self, selector: #selector(DataChecked), name: NSNotification.Name(rawValue: "DataChecked"), object: nil)
+//NotificationCenter.default.addObserver(self, selector: #selector(updateOwedMoneyStatus), name: NSNotification.Name(rawValue: "updateHome"), object: nil)
         // Do any additional setup after loading the view.
     }
     
@@ -46,7 +47,7 @@ class MenuViewController: UIViewController {
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "ResultViewController") as! ResultViewController
         self.present(vc,animated: true)
     }
-    func checkData(){
+   @objc func DataChecked(){
         childRef.observe(DataEventType.value, with: {(snapshot) in
                       if snapshot.childrenCount > 0 {
                         self.result = true

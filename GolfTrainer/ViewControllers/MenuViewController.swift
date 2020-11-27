@@ -30,8 +30,9 @@ class MenuViewController: UIViewController {
                          self.present(vc,animated: true)
         }
         else{
-            IntroductionViewController.alert(message: "Please select the club", move: nil)
-        }
+            let alert = UIAlertController(title: "Note", message: "Please select the Club", preferredStyle: .alert)
+                                   alert.addAction(UIAlertAction(title: "ok", style: .default, handler:nil))
+                                  self.present(alert,animated: true)        }
     }
     @IBAction func AccuracyDrillButton(_ sender: UIButton) {
         if result != nil{

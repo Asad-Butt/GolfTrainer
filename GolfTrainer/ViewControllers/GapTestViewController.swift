@@ -8,7 +8,7 @@
 
 import UIKit
 import FirebaseDatabase
-
+var `clubSelected`:String = ""
 class GapTestViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource,UITextFieldDelegate {
     
     var currentTextField = UITextField()
@@ -20,13 +20,27 @@ class GapTestViewController: UIViewController,UIPickerViewDelegate,UIPickerViewD
     let childRef = Database.database().reference(withPath: "App/Category/")
     var selectedClub: String = ""
     var selectedYard: String = ""
-
+    var isSave: Bool = false
     @IBAction func saveButtonTapped(_ sender: UIButton) {
+        if isSave{
+            IntroductionViewController.alert(message: "Already saved", move: nil)
+        }else{
+            isSave = true
         IntroductionViewController.alert(message: "\(selectedClub) club and \(selectedYard) has been selected and saved", move: nil)
-    }
+        }}
     @IBAction func nextButtonTapped(_ sender: UIButton) {
-                    let vc = self.storyboard?.instantiateViewController(withIdentifier: "AccuracyViewController") as! AccuracyViewController
-                    self.present(vc,animated: true)
+        if isSave{
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: "AccuracyViewController") as! AccuracyViewController
+            self.present(vc,animated: true)
+        }else{
+            let alert = UIAlertController(title: "Note", message: "\(selectedClub) club and \(selectedYard) has been selected and saved", preferredStyle: .alert)
+                          alert.addAction(UIAlertAction(title: "ok", style: .default, handler: { action in
+                            let vc = self.storyboard?.instantiateViewController(withIdentifier: "AccuracyViewController") as! AccuracyViewController
+                            self.present(vc,animated: true)
+                          }))
+                     self.present(alert,animated: true)
+        }
+                   
     }
     @IBAction func backButtonTapped(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
@@ -92,7 +106,8 @@ class GapTestViewController: UIViewController,UIPickerViewDelegate,UIPickerViewD
     // Capture the picker view selection
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
                 if currentTextField == clubsTextField{
-                    FetchClubs()
+                    isSave = false
+                    `clubSelected` = clubsData[row]
                     selectedClub = clubsData[row]
             clubsTextField.text = clubsData[row]
 

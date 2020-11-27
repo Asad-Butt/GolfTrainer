@@ -41,6 +41,7 @@ class ClubsViewController: UIViewController {
     Item(imageName: "17",clubName:"Putter")]
     
     @IBAction func backButtonTapped(_ sender: UIButton) {
+        isSave = false
         self.dismiss(animated: true, completion: nil)
     }
     @IBAction func saveButtonTaped(_ sender: UIButton) {
@@ -75,6 +76,7 @@ class ClubsViewController: UIViewController {
     @IBAction func nextButtonTapped(_ sender: UIButton) {
         if isSave{
             let vc = self.storyboard?.instantiateViewController(withIdentifier: "GapTestViewController") as! GapTestViewController
+            isSave = false
             self.present(vc,animated: true)
         }else{
        items.map { (item) in
@@ -130,6 +132,7 @@ class ClubsViewController: UIViewController {
             let item = collectionView.cellForItem(at: indexPath) as! ClubsCVC
             items[index].isSelected = !items[index].isSelected
             item.checkImage.isHidden =  !items[index].isSelected
+            isSave = false
     }
 }
 

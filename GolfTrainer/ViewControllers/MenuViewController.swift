@@ -49,11 +49,11 @@ class MenuViewController: UIViewController {
         self.present(vc,animated: true)
     }
    @objc func DataChecked(){
-        childRef.observe(DataEventType.value, with: {(snapshot) in
+        childRef.observe(DataEventType.value, with: {[weak self](snapshot) in
                       if snapshot.childrenCount > 0 {
-                        self.result = true
+                        self?.result = true
                       }else{
-                        self.result = nil
+                        self?.result = nil
             }
         })
     }

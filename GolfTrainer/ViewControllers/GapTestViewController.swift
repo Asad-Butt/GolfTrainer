@@ -11,8 +11,8 @@ import FirebaseDatabase
 var `clubSelected`:String = ""
 class GapTestViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource,UITextFieldDelegate {
     
-    var currentTextField = UITextField()
-    var pickerView = UIPickerView()
+      var currentTextField = UITextField()
+      var pickerView = UIPickerView()
     @IBOutlet weak var clubsTextField: UITextField!
     @IBOutlet weak var yardsTextField: UITextField!
     var clubsData: [String] = [String]()
@@ -53,18 +53,18 @@ class GapTestViewController: UIViewController,UIPickerViewDelegate,UIPickerViewD
         // Do any additional setup after loading the view.
     }
    @objc func FetchClubs() {
-           childRef.observe(DataEventType.value, with: {(snapshot) in
+           childRef.observe(DataEventType.value, with: {[weak self](snapshot) in
                if snapshot.childrenCount > 0 {
-                   self.clubsData.removeAll()
+                self?.clubsData.removeAll()
                    for shot in snapshot.children.allObjects as! [DataSnapshot]{
                        let shotsObject = shot.value as? [String: AnyObject]
                        let club = shotsObject?["club"]
                     let clubData = String(club as! String)
                        
-                       self.clubsData.append(clubData)
-                    self.clubsTextField.text = club as! String
+                    self?.clubsData.append(clubData)
+                    self?.clubsTextField.text = club as? String
                    }
-                self.yardsTextField.text = "65 yards"
+                self?.yardsTextField.text = "65 yards"
                }
            })
            
@@ -93,7 +93,7 @@ class GapTestViewController: UIViewController,UIPickerViewDelegate,UIPickerViewD
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
            if currentTextField == clubsTextField{
                  return clubsData[row]
-            NotificationCenter.default.post(Notification(name: NSNotification.Name(rawValue: "FetchClubs")))
+//            NotificationCenter.default.post(Notification(name: NSNotification.Name(rawValue: "FetchClubs")))
              }
              else if currentTextField == yardsTextField{
                  return yardsData[row]

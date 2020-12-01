@@ -51,7 +51,7 @@ class ClubsViewController: UIViewController {
                            self.present(alert,animated:true)
         }
         var selected: [String] = []
-        items.map { (item) in
+        items.map {[weak self] (item) in
             if item.isSelected == true{
                 selectedClubs.append(item.clubName)
                 print("items\(item.clubName)")
@@ -66,10 +66,10 @@ class ClubsViewController: UIViewController {
                     "club":item.clubName] as [String : Any]
                 childRef.child(item.clubName).setValue(itemData)
                 let alert = UIAlertController(title: "Clubs", message: "Clubs saved!.", preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "ok", style: .default, handler: {  action in
-                    self.isSave = true
+                alert.addAction(UIAlertAction(title: "ok", style: .default, handler: {[weak self]  action in
+                    self?.isSave = true
                 }))
-                self.present(alert,animated:true)
+                self?.present(alert,animated:true)
             }
         }
     }
@@ -79,7 +79,7 @@ class ClubsViewController: UIViewController {
             isSave = false
             self.present(vc,animated: true)
         }else{
-       items.map { (item) in
+       items.map { [weak self](item) in
             if item.isSelected == true{
                 print("items\(item.clubName)")
                 let itemData = [
@@ -93,11 +93,11 @@ class ClubsViewController: UIViewController {
                     "club":item.clubName] as [String : Any]
                 childRef.child(item.clubName).setValue(itemData)
                 let alert = UIAlertController(title: "Note", message: "Club saved!", preferredStyle: .alert)
-                     alert.addAction(UIAlertAction(title: "ok", style: .default, handler: { action in
-                       let vc = self.storyboard?.instantiateViewController(withIdentifier: "GapTestViewController") as! GapTestViewController
-                       self.present(vc,animated: true)
+                     alert.addAction(UIAlertAction(title: "ok", style: .default, handler: {[weak self] action in
+                        let vc = self?.storyboard?.instantiateViewController(withIdentifier: "GapTestViewController") as! GapTestViewController
+                        self?.present(vc,animated: true)
                      }))
-                self.present(alert,animated: true)
+                self?.present(alert,animated: true)
             }
             }
         }

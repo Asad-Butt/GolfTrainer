@@ -13,11 +13,11 @@ class AccuracyViewController: UIViewController,UITextFieldDelegate,UIPickerViewD
     let childRef = Database.database().reference(withPath: "App/Category/")
     var shotsData: [ShotsResult] = [ShotsResult]()
     var shotPlace: Int?
-    var currentTextField = UITextField()
-    var pickerView = UIPickerView()
+     var currentTextField = UITextField()
+     var pickerView = UIPickerView()
     @IBOutlet weak var clubsTextField: UITextField!
     var clubsData:[String] = [String]()
-    var selectedClub: String = ""
+    var selectedClub: String? = ""
     var isSave: Bool = false
     @IBOutlet var buttons: [UIButton]!
 
@@ -35,10 +35,10 @@ class AccuracyViewController: UIViewController,UITextFieldDelegate,UIPickerViewD
 
             }
   @objc  func FetchClubs() {
-           childRef.observe(DataEventType.value, with: {(snapshot) in
+           childRef.observe(DataEventType.value, with: {[weak self](snapshot) in
                if snapshot.childrenCount > 0 {
-                   self.clubsData.removeAll()
-                self.shotsData.removeAll()
+                self?.clubsData.removeAll()
+                self?.shotsData.removeAll()
                    for shot in snapshot.children.allObjects as! [DataSnapshot]{
                        let shotsObject = shot.value as? [String: AnyObject]
                        let club = shotsObject?["club"]
@@ -50,9 +50,9 @@ class AccuracyViewController: UIViewController,UITextFieldDelegate,UIPickerViewD
                         let Right = shotsObject?["Right"]
                         let ShortRight = shotsObject?["ShortRight"]
                         let shotData = ShotsResult(club: club as! String,Shots: Shots as! Int,Accurate: Accurate as! Int, Left:Left as! Int, ShortLeft: ShortLeft as! Int, ShortAccurate: ShortAccurate as! Int, Right: Right as! Int, ShortRight: ShortRight as! Int)
-                    self.shotsData.append(shotData)
+                    self?.shotsData.append(shotData)
                     let clubData = String(club as! String)
-                    self.clubsData.append(clubData)
+                    self?.clubsData.append(clubData)
 //                    if club as! String == `clubSelected`{
 //               self.totalShotsLabel.text = "\(Shots as! Int) shots"
 //                    }
@@ -68,7 +68,7 @@ class AccuracyViewController: UIViewController,UITextFieldDelegate,UIPickerViewD
            })
        }
     @IBAction func buttonPressed(_ sender: UIButton) {
-        buttons.forEach { (button) in
+        buttons.forEach { [weak self](button) in
             button.layer.borderWidth = 0
         }
         buttons[sender.tag].layer.borderWidth = 3
@@ -98,7 +98,7 @@ class AccuracyViewController: UIViewController,UITextFieldDelegate,UIPickerViewD
         self.present(alert,animated: true)
     }
     func saveDirection(tag: Int) {
-    shotsData.map { (shots) in
+    shotsData.map { [weak self](shots) in
         if shots.club == selectedClub {
             if shots.Shots<10{
                if shotPlace != nil{
@@ -113,7 +113,7 @@ class AccuracyViewController: UIViewController,UITextFieldDelegate,UIPickerViewD
                    "Shots":shots.Shots+1,
                    "club":shots.club] as [String : Any]
                childRef.child(shots.club).setValue(itemData)
-                    self.totalShotsLabel.text = "\(shots.Shots + 1) shots taken"
+                    self?.totalShotsLabel.text = "\(shots.Shots + 1) shots taken"
                         if tag == 2{
                  saveShots()
                         }else{
@@ -133,7 +133,7 @@ class AccuracyViewController: UIViewController,UITextFieldDelegate,UIPickerViewD
                    "club":shots.club] as [String : Any]
                childRef.child(shots.club).setValue(itemData)
             if tag == 2{
-                self.totalShotsLabel.text = "\(shots.Shots + 1) shots taken"
+                self?.totalShotsLabel.text = "\(shots.Shots + 1) shots taken"
         saveShots()
             }else{
                       moveNext()
@@ -151,7 +151,7 @@ class AccuracyViewController: UIViewController,UITextFieldDelegate,UIPickerViewD
                    "club":shots.club] as [String : Any]
                childRef.child(shots.club).setValue(itemData)
            if tag == 2{
-            self.totalShotsLabel.text = "\(shots.Shots + 1) shots taken"
+            self?.totalShotsLabel.text = "\(shots.Shots + 1) shots taken"
            saveShots()
             
            }else{
@@ -171,7 +171,7 @@ class AccuracyViewController: UIViewController,UITextFieldDelegate,UIPickerViewD
                    "club":shots.club] as [String : Any]
                childRef.child(shots.club).setValue(itemData)
                 if tag == 2{
-                    self.totalShotsLabel.text = "\(shots.Shots + 1) shots taken"
+                    self?.totalShotsLabel.text = "\(shots.Shots + 1) shots taken"
                     saveShots()
                 }else{
                   moveNext()
@@ -190,7 +190,7 @@ class AccuracyViewController: UIViewController,UITextFieldDelegate,UIPickerViewD
                    "club":shots.club] as [String : Any]
                childRef.child(shots.club).setValue(itemData)
          if tag == 2{
-            self.totalShotsLabel.text = "\(shots.Shots + 1) shots taken"
+            self?.totalShotsLabel.text = "\(shots.Shots + 1) shots taken"
        saveShots()
          }else{
                      moveNext()
@@ -209,7 +209,7 @@ class AccuracyViewController: UIViewController,UITextFieldDelegate,UIPickerViewD
                    "club":shots.club] as [String : Any]
                childRef.child(shots.club).setValue(itemData)
                 if tag == 2{
-                    self.totalShotsLabel.text = "\(shots.Shots + 1) shots taken"
+                    self?.totalShotsLabel.text = "\(shots.Shots + 1) shots taken"
                    saveShots()
                 }else{
                           moveNext()
@@ -220,13 +220,13 @@ class AccuracyViewController: UIViewController,UITextFieldDelegate,UIPickerViewD
            else{
                let alert = UIAlertController(title: "Note", message: "Please select the direction", preferredStyle: .alert)
              alert.addAction(UIAlertAction(title: "ok", style: .default, handler:nil))
-            self.present(alert,animated: true)
+                self?.present(alert,animated: true)
                 
             }
         }else{
         let alert = UIAlertController(title: "Note", message: "You have already played 10 shots against the Club", preferredStyle: .alert)
               alert.addAction(UIAlertAction(title: "ok", style: .default, handler:nil))
-             self.present(alert,animated: true)
+                self?.present(alert,animated: true)
                      
                  }
         }
@@ -286,7 +286,7 @@ class AccuracyViewController: UIViewController,UITextFieldDelegate,UIPickerViewD
         self.pickerView.delegate = self
         self.pickerView.dataSource = self
         currentTextField = textField
-            currentTextField.inputView = pickerView
+        currentTextField.inputView = pickerView
     }
     /*
     // MARK: - Navigation

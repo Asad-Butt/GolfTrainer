@@ -18,7 +18,7 @@ class IntroductionViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     func checkData(){
-           childRef.observe(DataEventType.value, with: {(snapshot) in
+           childRef.observe(DataEventType.value, with: {[weak self](snapshot) in
                          if snapshot.childrenCount > 0 {
              NotificationCenter.default.post(Notification(name: NSNotification.Name(rawValue: "DataChecked")))
                }

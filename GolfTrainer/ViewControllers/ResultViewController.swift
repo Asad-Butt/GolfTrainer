@@ -46,9 +46,9 @@ class ResultViewController: UIViewController, UITableViewDelegate, UITableViewDa
     func FetchData() {
        
  self.startIndicatingActivity()
-        childRef.observe(DataEventType.value, with: {(snapshot) in
+        childRef.observe(DataEventType.value, with: {[weak self](snapshot) in
             if snapshot.childrenCount > 0 {
-                self.shotsData.removeAll()
+                self?.shotsData.removeAll()
                 for shot in snapshot.children.allObjects as! [DataSnapshot]{
                     let shotsObject = shot.value as? [String: AnyObject]
                     let club = shotsObject?["club"]
@@ -61,20 +61,20 @@ class ResultViewController: UIViewController, UITableViewDelegate, UITableViewDa
                     let ShortRight = shotsObject?["ShortRight"]
                     let shotData = ShotsResult(club: club as! String,Shots: Shots as! Int,Accurate: Accurate as! Int, Left:Left as! Int, ShortLeft: ShortLeft as! Int, ShortAccurate: ShortAccurate as! Int, Right: Right as! Int, ShortRight: ShortRight as! Int)
                     
-                    self.shotsData.append(shotData)
-                    self.empty = self.shotsData.count
+                    self?.shotsData.append(shotData)
+                    self?.empty = self?.shotsData.count
                 }
-                self.stopIndicatingActivity()
-                self.tableView.reloadData()
+                self?.stopIndicatingActivity()
+                self?.tableView.reloadData()
             }else{
-                self.stopIndicatingActivity()
+                self?.stopIndicatingActivity()
              let alert = UIAlertController(title: "Note", message: "No record found!", preferredStyle: .alert)
-                   alert.addAction(UIAlertAction(title: "ok", style: .default, handler: { action in
-                     let vc = self.storyboard?.instantiateViewController(withIdentifier: "MenuViewController") as! MenuViewController
+                   alert.addAction(UIAlertAction(title: "ok", style: .default, handler: { [weak self]action in
+                    let vc = self?.storyboard?.instantiateViewController(withIdentifier: "MenuViewController") as! MenuViewController
                      
-                     self.present(vc,animated: true)
+                    self?.present(vc,animated: true)
                    }))
-                self.present(alert,animated: true)
+                self?.present(alert,animated: true)
             }
         })
         
@@ -107,11 +107,11 @@ class ResultViewController: UIViewController, UITableViewDelegate, UITableViewDa
         empty = shotsData.count - 1
         childRef.child(id).setValue(nil)
         let alert = UIAlertController(title: "Note", message: "\(id) club has been deleted", preferredStyle: .alert)
-           alert.addAction(UIAlertAction(title: "ok", style: .default, handler: { action in
-             self.tableView.reloadData()
-            if self.empty == 0{
-            let vc = self.storyboard?.instantiateViewController(withIdentifier: "MenuViewController") as! MenuViewController
-            self.present(vc,animated: true)
+           alert.addAction(UIAlertAction(title: "ok", style: .default, handler: { [weak self]action in
+            self?.tableView.reloadData()
+            if self?.empty == 0{
+                let vc = self?.storyboard?.instantiateViewController(withIdentifier: "MenuViewController") as! MenuViewController
+                    self?.present(vc,animated: true)
             }
          }))
         self.present(alert,animated: true)

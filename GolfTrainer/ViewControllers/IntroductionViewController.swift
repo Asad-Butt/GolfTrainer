@@ -48,7 +48,9 @@ class IntroductionViewController: UIViewController {
             }
 
             // Now present the alert controller
-            topController.present(alert, animated: true, completion: nil)
+            
+
+//            topController.present(alert, animated: true, completion: nil)
         }
     }
   

@@ -172,7 +172,7 @@ extension UIActivityIndicatorView {
         indicator.layer.cornerRadius = 10
         indicator.center = center
         indicator.hidesWhenStopped = true
-        indicator.style = UIActivityIndicatorView.Style.whiteLarge
+        indicator.style = UIActivityIndicatorView.Style.large
         indicator.backgroundColor = UIColor(red: 1/255, green: 1/255, blue: 1/255, alpha: 0.5)
         return indicator
     }

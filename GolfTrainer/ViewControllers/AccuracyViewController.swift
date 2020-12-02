@@ -68,7 +68,7 @@ class AccuracyViewController: UIViewController,UITextFieldDelegate,UIPickerViewD
            })
        }
     @IBAction func buttonPressed(_ sender: UIButton) {
-        buttons.forEach { [weak self](button) in
+        buttons.forEach { (button) in
             button.layer.borderWidth = 0
         }
         buttons[sender.tag].layer.borderWidth = 3
@@ -98,7 +98,7 @@ class AccuracyViewController: UIViewController,UITextFieldDelegate,UIPickerViewD
         self.present(alert,animated: true)
     }
     func saveDirection(tag: Int) {
-    shotsData.map { [weak self](shots) in
+        shotsData.forEach({ [weak self](shots) in
         if shots.club == selectedClub {
             if shots.Shots<10{
                if shotPlace != nil{
@@ -230,7 +230,7 @@ class AccuracyViewController: UIViewController,UITextFieldDelegate,UIPickerViewD
                      
                  }
         }
-}
+})
     }
     
     func moveNext () {

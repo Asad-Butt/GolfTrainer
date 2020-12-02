@@ -50,8 +50,7 @@ class ClubsViewController: UIViewController {
                            alert.addAction(UIAlertAction(title: "ok", style: .default, handler: nil))
                            self.present(alert,animated:true)
         }
-        var selected: [String] = []
-        items.map {[weak self] (item) in
+        items.forEach({[weak self] (item) in
             if item.isSelected == true{
                 selectedClubs.append(item.clubName)
                 print("items\(item.clubName)")
@@ -71,7 +70,7 @@ class ClubsViewController: UIViewController {
                 }))
                 self?.present(alert,animated:true)
             }
-        }
+        })
     }
     @IBAction func nextButtonTapped(_ sender: UIButton) {
         if isSave{
@@ -79,7 +78,7 @@ class ClubsViewController: UIViewController {
             isSave = false
             self.present(vc,animated: true)
         }else{
-       items.map { [weak self](item) in
+       items.forEach({ [weak self](item) in
             if item.isSelected == true{
                 print("items\(item.clubName)")
                 let itemData = [
@@ -99,7 +98,7 @@ class ClubsViewController: UIViewController {
                      }))
                 self?.present(alert,animated: true)
             }
-            }
+            })
         }
     }
     override func viewDidLoad() {

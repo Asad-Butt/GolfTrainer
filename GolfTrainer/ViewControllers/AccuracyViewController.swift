@@ -68,9 +68,9 @@ class AccuracyViewController: UIViewController,UITextFieldDelegate,UIPickerViewD
            })
        }
     @IBAction func buttonPressed(_ sender: UIButton) {
-        buttons.forEach { (button) in
+        buttons.forEach ({ (button) in
             button.layer.borderWidth = 0
-        }
+        })
         buttons[sender.tag].layer.borderWidth = 3
         buttons[sender.tag].layer.borderColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         shotTaken(shot: sender.tag)

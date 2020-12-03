@@ -29,7 +29,7 @@ class AccuracyViewController: UIViewController, UITextFieldDelegate, UIPickerVie
     }
 
     override func viewDidLoad() {
-        super.viewDidLoad() 
+        super.viewDidLoad()
         FetchClubs()
         clubsTextField.text = clubSelected
     }
@@ -73,14 +73,8 @@ class AccuracyViewController: UIViewController, UITextFieldDelegate, UIPickerVie
     }
 
     @IBAction func saveButtonTapped(_ sender: UIButton) {
-        if isSave {
-            let alert = UIAlertController(title: "Note", message: "You have already saved the directions", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "ok", style: .default, handler: nil))
-            present(alert, animated: true)
-        } else {
-//            isSave = true
+        isSave = true
             saveDirection(tag: sender.tag)
-        }
     }
 
     func saveShots() {
@@ -212,7 +206,10 @@ class AccuracyViewController: UIViewController, UITextFieldDelegate, UIPickerVie
                     }
                 } else {
                     let alert = UIAlertController(title: "Note", message: "You have already played 10 shots against the Club", preferredStyle: .alert)
-                    alert.addAction(UIAlertAction(title: "ok", style: .default, handler: nil))
+                    alert.addAction(UIAlertAction(title: "ok", style: .default, handler: { [weak self] _ in
+                        let vc = self?.storyboard?.instantiateViewController(withIdentifier: "ResultViewController") as! ResultViewController
+                        self?.present(vc, animated: true)
+                    }))
                     self?.present(alert, animated: true)
                 }
             }

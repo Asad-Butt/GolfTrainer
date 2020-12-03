@@ -6,34 +6,37 @@
 //  Copyright © 2020 Asad. All rights reserved.
 //
 
-import UIKit
 import FirebaseDatabase
+import UIKit
 
 class IntroductionViewController: UIViewController {
     let childRef = Database.database().reference()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-       checkData()
+        checkData()
         // Do any additional setup after loading the view.
     }
-    func checkData(){
-           childRef.observe(DataEventType.value, with: {(snapshot) in
-                         if snapshot.childrenCount > 0 {
-             NotificationCenter.default.post(Notification(name: NSNotification.Name(rawValue: "DataChecked")))
-               }
-           })
-       }
-    @IBAction func nextButtonTapped(_ sender: UIButton) {
-        let vc = self.storyboard?.instantiateViewController(withIdentifier: "MenuViewController") as! MenuViewController
-                      self.present(vc,animated: true)
+
+    func checkData() {
+        childRef.observe(DataEventType.value, with: { snapshot in
+            if snapshot.childrenCount > 0 {
+                NotificationCenter.default.post(Notification(name: NSNotification.Name(rawValue: "DataChecked")))
+            }
+        })
     }
-    class func alert(message: String,move:String?){
+
+    @IBAction func nextButtonTapped(_: UIButton) {
+        let vc = storyboard?.instantiateViewController(withIdentifier: "MenuViewController") as! MenuViewController
+        present(vc, animated: true)
+    }
+
+    class func alert(message: String, move _: String?) {
         let alert = UIAlertController(title: "Note", message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "ok", style: .default, handler:nil))
+        alert.addAction(UIAlertAction(title: "ok", style: .default, handler: nil))
 //        if let topController = UIApplication.shared.keyWindow?.rootViewController {
 //            topController.present(alert,animated: true)}
-        if var topController = UIApplication.shared.keyWindow?.rootViewController {
+        if var topController = UIApplication.shared.windows.first?.rootViewController {
             while let presentedViewController = topController.presentedViewController {
                 topController = presentedViewController
             }
@@ -44,25 +47,21 @@ class IntroductionViewController: UIViewController {
                     topController = vc
                     vc.dismiss(animated: true, completion: nil)
                 }
-
             }
 
             // Now present the alert controller
-            
 
 //            topController.present(alert, animated: true, completion: nil)
         }
     }
-  
-    
-    /*let vc = self.storyboard?.instantiateViewController(withIdentifier: "VC") as! VC
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+    /* let vc = self.storyboard?.instantiateViewController(withIdentifier: "VC") as! VC
+     // MARK: - Navigation
 
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+         // Get the new view controller using segue.destination.
+         // Pass the selected object to the new view controller.
+     }
+     */
 }

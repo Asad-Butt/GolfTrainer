@@ -9,18 +9,18 @@
 import UIKit
 
 class ResultTableViewCell: UITableViewCell {
-    @IBOutlet weak var clubsLabel: UILabel!
-    
-    @IBOutlet weak var shotsLabel: UITextField!
-    @IBOutlet weak var accurateLabel: UITextField!
-    @IBOutlet weak var leftLabel: UITextField!
-    @IBOutlet weak var shortLeftLabel: UITextField!
-    @IBOutlet weak var shortAccurateLabel: UITextField!
-    @IBOutlet weak var rightLabel: UITextField!
-    
-    @IBOutlet weak var shortRightLabel: UITextField!
-    
-    @IBOutlet weak var deleteResultButton: UIButton!
+    @IBOutlet var clubsLabel: UILabel!
+
+    @IBOutlet var shotsLabel: UITextField!
+    @IBOutlet var accurateLabel: UITextField!
+    @IBOutlet var leftLabel: UITextField!
+    @IBOutlet var shortLeftLabel: UITextField!
+    @IBOutlet var shortAccurateLabel: UITextField!
+    @IBOutlet var rightLabel: UITextField!
+
+    @IBOutlet var shortRightLabel: UITextField!
+
+    @IBOutlet var deleteResultButton: UIButton!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -31,5 +31,4 @@ class ResultTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
 }

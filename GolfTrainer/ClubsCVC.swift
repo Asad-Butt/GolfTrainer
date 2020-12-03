@@ -9,9 +9,9 @@
 import UIKit
 
 class ClubsCVC: UICollectionViewCell {
-     @IBOutlet weak var clubsImage: UIImageView!
-    @IBOutlet weak var checkImage: UIImageView!
-    @IBOutlet weak var clubName: UILabel!
+    @IBOutlet var clubsImage: UIImageView!
+    @IBOutlet var checkImage: UIImageView!
+    @IBOutlet var clubName: UILabel!
 //
 //    override var isHighlighted: Bool{
 //      didSet {
@@ -22,5 +22,6 @@ class ClubsCVC: UICollectionViewCell {
 //       didSet {
 //         checkImage.isHidden = !isSelected
 //       }
-     }
-//}
+}
+
+// }

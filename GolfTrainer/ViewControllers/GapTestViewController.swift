@@ -94,8 +94,7 @@ class GapTestViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
     // The data to return fopr the row and component (column) that's being passed in
     func pickerView(_: UIPickerView, titleForRow row: Int, forComponent _: Int) -> String? {
         if currentTextField == clubsTextField {
-            return clubsData[row]
-//            NotificationCenter.default.post(Notification(name: NSNotification.Name(rawValue: "FetchClubs")))
+            return clubsData[row] 
         } else if currentTextField == yardsTextField {
             return yardsData[row]
         } else {
@@ -129,14 +128,4 @@ class GapTestViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
             currentTextField.inputView = pickerView
         }
     }
-
-    /*
-     // MARK: - Navigation
-
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-         // Get the new view controller using segue.destination.
-         // Pass the selected object to the new view controller.
-     }
-     */
 }

@@ -29,8 +29,7 @@ class AccuracyViewController: UIViewController, UITextFieldDelegate, UIPickerVie
     }
 
     override func viewDidLoad() {
-        super.viewDidLoad()
-//        NotificationCenter.default.addObserver(self, selector: #selector(FetchClubs), name: NSNotification.Name(rawValue: "FetchClubs"), object: nil)
+        super.viewDidLoad() 
         FetchClubs()
         clubsTextField.text = clubSelected
     }
@@ -54,17 +53,7 @@ class AccuracyViewController: UIViewController, UITextFieldDelegate, UIPickerVie
                     self?.shotsData.append(shotData)
                     let clubData = String(club as! String)
                     self?.clubsData.append(clubData)
-//                    if club as! String == `clubSelected`{
-//               self.totalShotsLabel.text = "\(Shots as! Int) shots"
-//                    }
-//                    self.clubsTextField.text = club as! String
-//                    self.totalShotsLabel.text = "\(Shots as! Int) shots"
                 }
-//                if self.clubsData[0] != nil{
-//                                  self.clubsTextField.text = self.clubsData[0]
-//                              }else{
-//                                  self.clubsTextField.text = ""
-//                              }
             }
         })
     }
@@ -232,12 +221,8 @@ class AccuracyViewController: UIViewController, UITextFieldDelegate, UIPickerVie
 
     func moveNext() {
         isSave = false
-//            let alert = UIAlertController(title: "Note", message: "You have Saved Your Direction against Club", preferredStyle: .alert)
-//               alert.addAction(UIAlertAction(title: "ok", style: .default, handler: { action in
         let vc = storyboard?.instantiateViewController(withIdentifier: "ResultViewController") as! ResultViewController
         present(vc, animated: true)
-//               }))
-//          self.present(alert,animated: true)
     }
 
     @IBAction func nextButtonTapped(_ sender: UIButton) {
@@ -286,14 +271,4 @@ class AccuracyViewController: UIViewController, UITextFieldDelegate, UIPickerVie
         currentTextField = textField
         currentTextField.inputView = pickerView
     }
-
-    /*
-     // MARK: - Navigation
-
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-         // Get the new view controller using segue.destination.
-         // Pass the selected object to the new view controller.
-     }
-     */
 }

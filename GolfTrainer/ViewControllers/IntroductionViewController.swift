@@ -34,34 +34,16 @@ class IntroductionViewController: UIViewController {
     class func alert(message: String, move _: String?) {
         let alert = UIAlertController(title: "Note", message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "ok", style: .default, handler: nil))
-//        if let topController = UIApplication.shared.keyWindow?.rootViewController {
-//            topController.present(alert,animated: true)}
         if var topController = UIApplication.shared.windows.first?.rootViewController {
             while let presentedViewController = topController.presentedViewController {
                 topController = presentedViewController
             }
-            // topController should now be your topmost view controller
-            // Dismissing an UIAlertController which is being displayed and setting the topController down one level
             if topController is UIAlertController {
                 if let vc = topController.presentingViewController {
                     topController = vc
                     vc.dismiss(animated: true, completion: nil)
                 }
             }
-
-            // Now present the alert controller
-
-//            topController.present(alert, animated: true, completion: nil)
         }
-    }
-
-    /* let vc = self.storyboard?.instantiateViewController(withIdentifier: "VC") as! VC
-     // MARK: - Navigation
-
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-         // Get the new view controller using segue.destination.
-         // Pass the selected object to the new view controller.
-     }
-     */
+    } 
 }

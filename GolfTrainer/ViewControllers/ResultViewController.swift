@@ -116,7 +116,7 @@ class ResultViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
 }
 
-public extension ResultViewController {
+ extension ResultViewController {
     final class ObjectAssociation<T: AnyObject> {
         private let policy: objc_AssociationPolicy
 
@@ -175,8 +175,4 @@ public extension UIActivityIndicatorView {
         indicator.backgroundColor = UIColor(red: 1 / 255, green: 1 / 255, blue: 1 / 255, alpha: 0.5)
         return indicator
     }
-}
-
-extension UIViewController {
-    // see ObjectAssociation<T> class below
-}
+} 

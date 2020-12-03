@@ -14,9 +14,7 @@ class MenuViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         DataChecked()
-        NotificationCenter.default.addObserver(self, selector: #selector(DataChecked), name: NSNotification.Name(rawValue: "DataChecked"), object: nil)
-        // NotificationCenter.default.addObserver(self, selector: #selector(updateOwedMoneyStatus), name: NSNotification.Name(rawValue: "updateHome"), object: nil)
-        // Do any additional setup after loading the view.
+        NotificationCenter.default.addObserver(self, selector: #selector(DataChecked), name: NSNotification.Name(rawValue: "DataChecked"), object: nil) 
     }
 
     @IBAction func selectClubsBotton(_: UIButton) {
@@ -58,14 +56,4 @@ class MenuViewController: UIViewController {
             }
         })
     }
-
-    /*
-     // MARK: - Navigation
-
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-         // Get the new view controller using segue.destination.
-         // Pass the selected object to the new view controller.
-     }
-     */
 }
